@@ -139,7 +139,7 @@ function App() {
             </Dropdown>
           </Col>
           <Col className="checkbox col-auto">
-            <h6>AVISITN Filter:</h6>
+            <h6>CRIT5FL Filter:</h6>
             <Form.Group className="check-filter">
               <Form.Check
                 label="Yes"
