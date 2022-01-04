@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Abbvie-Challenge/static/css/main.7451096e.css",
+    "main.js": "/Abbvie-Challenge/static/js/main.3fd7b54b.js",
+    "static/js/787.42ba4307.chunk.js": "/Abbvie-Challenge/static/js/787.42ba4307.chunk.js",
+    "index.html": "/Abbvie-Challenge/index.html",
+    "main.7451096e.css.map": "/Abbvie-Challenge/static/css/main.7451096e.css.map",
+    "main.3fd7b54b.js.map": "/Abbvie-Challenge/static/js/main.3fd7b54b.js.map",
+    "787.42ba4307.chunk.js.map": "/Abbvie-Challenge/static/js/787.42ba4307.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7451096e.css",
+    "static/js/main.3fd7b54b.js"
+  ]
+}
