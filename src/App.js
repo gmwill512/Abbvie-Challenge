@@ -8,6 +8,7 @@ import {
   ListGroup,
   Form,
   Button,
+  Table,
 } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import Graph from './graph';
@@ -71,8 +72,8 @@ function App() {
     let avalAvg = people.map((person) => person.AVAL);
     let chgAvg = people.map((person) => person.CHG);
 
-    avalAvg = avalAvg.reduce((a, b) => a + b) / avalAvg.length;
-    chgAvg = chgAvg.reduce((a, b) => a + b) / chgAvg.length;
+    avalAvg = avalAvg.reduce((a, b) => a + b, 0) / avalAvg.length;
+    chgAvg = chgAvg.reduce((a, b) => a + b, 0) / chgAvg.length;
 
     console.log('AVAL average is: ' + avalAvg);
     console.log('CHG average is: ' + chgAvg);
@@ -92,12 +93,12 @@ function App() {
               Reset
             </Button>
           </Col>
-          <Col>
+          <Col className="filter-elements">
+            <h6>TRT01P Filter:</h6>
             <Dropdown onSelect={(eventKey) => handleTrt01pFilter(eventKey)}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                {filters.trt01p === 'All' ? 'TRT01P Filter' : filters.trt01p}
+                {filters.trt01p === 'All' ? 'All' : filters.trt01p}
               </Dropdown.Toggle>
-
               <Dropdown.Menu>
                 <Dropdown.Item href="#" eventKey="All">
                   ALL
@@ -114,10 +115,11 @@ function App() {
               </Dropdown.Menu>
             </Dropdown>
           </Col>
-          <Col>
+          <Col className="filter-elements">
+            <h6>AVISITN Filter:</h6>
             <Dropdown onSelect={(eventKey) => handleAvistnFilter(eventKey)}>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                {filters.avisitn === 'All' ? 'AVISITN Filter' : filters.avisitn}
+                {filters.avisitn === 'All' ? 'All' : filters.avisitn}
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
@@ -166,30 +168,22 @@ function App() {
             />
           </Col>
         </Row>
-        <Container className="header">
-          <Row>
-            {header.map((titles, index) => (
-              <Col key={index}>
-                <strong>{titles}</strong>
-              </Col>
-            ))}
-          </Row>
-        </Container>
       </Container>
-      <br />
-      <br />
       <Container className="body">
-        <Row>
-          <Col>
-            <ListGroup>
-              {people.map((person, index) => (
-                <ListGroup.Item key={index}>
-                  <Row>{mapPeople(person)}</Row>
-                </ListGroup.Item>
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              {header.map((titles, index) => (
+                <th key={index}>{titles}</th>
               ))}
-            </ListGroup>
-          </Col>
-        </Row>
+            </tr>
+          </thead>
+          <tbody>
+            {people.map((person, index) => (
+              <tr key={index}>{mapPeople(person)}</tr>
+            ))}
+          </tbody>
+        </Table>
       </Container>
     </div>
   );
@@ -199,9 +193,9 @@ function mapPeople(people) {
   let res = [];
   for (const [key, value] of Object.entries(people)) {
     res.push(
-      <Col className="data" key={Math.random()}>
-        <p>{value}</p>
-      </Col>
+      <td className="data" key={Math.random()}>
+        {value}
+      </td>
     );
   }
   return res;

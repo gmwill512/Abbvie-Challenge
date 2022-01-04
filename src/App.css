@@ -9,9 +9,19 @@
   background-color: white;
   min-width:1200px;
 }
-
+.filters{
+  align-items: center;
+}
+.filter-elements{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h6{
+  margin:1rem
+}
 .body{
-  margin-top:4rem
+  margin-top:5rem;
 }
 .header{
   margin-top:1rem
@@ -19,3 +29,4 @@
 .checkbox{
 width:10rem
 }
+
