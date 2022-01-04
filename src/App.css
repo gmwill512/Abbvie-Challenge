@@ -7,7 +7,8 @@
 .fixed-top{
   padding:1rem;
   background-color: white;
-  min-width:1200px;
+  /* min-width:1200px; */
+  margin:auto
 }
 .filters{
   align-items: center;
@@ -18,7 +19,8 @@
   align-items: center;
 }
 h6{
-  margin:1rem
+  margin:1rem;
+  display: inline-block;
 }
 .body{
   margin-top:5rem;
@@ -27,6 +29,8 @@ h6{
   margin-top:1rem
 }
 .checkbox{
-width:10rem
+width:10rem;
 }
-
+.check-filter{
+  display: inline-block;
+}

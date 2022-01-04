@@ -5,7 +5,6 @@ import {
   Row,
   Container,
   Col,
-  ListGroup,
   Form,
   Button,
   Table,
@@ -139,8 +138,9 @@ function App() {
               </Dropdown.Menu>
             </Dropdown>
           </Col>
-          <Col className="checkbox">
-            <Form.Group>
+          <Col className="checkbox col-auto">
+            <h6>AVISITN Filter:</h6>
+            <Form.Group className="check-filter">
               <Form.Check
                 label="Yes"
                 inline
@@ -189,6 +189,7 @@ function App() {
   );
 }
 
+// Gets values from People object to be displayed in table
 function mapPeople(people) {
   let res = [];
   for (const [key, value] of Object.entries(people)) {

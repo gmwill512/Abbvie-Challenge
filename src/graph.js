@@ -4,8 +4,9 @@ import { Modal } from 'react-bootstrap';
 
 function Graph(props) {
   //Get x and y coordinates
-  let xPoints = props.people.map((persons) => persons.AVISITN);
-  let yPoints = props.people.map((persons) => persons.AVAL);
+  const { people } = props;
+  let xPoints = people.map((persons) => persons.AVISITN);
+  let yPoints = people.map((persons) => persons.AVAL);
 
   return (
     <div>
